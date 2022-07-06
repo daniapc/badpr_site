@@ -17,50 +17,52 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Notícias</a>
+        <%= link_to 'Notícias', home_noticias_path, class: "nav-link" %>
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+        <a data-target="#navItem1" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
           Badminton e Parabadminton
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <div id="navItem1" class="dropdown-menu" aria-labelledby="navbarDropdown" >
           <%= link_to 'Regras simplificadas', home_regras_simples_path, class: "dropdown-item" %>
-          <a class="dropdown-item" href="#">Regras completas</a>
+          <%= link_to 'Regras completas', home_regras_completas_path, class: "dropdown-item" %>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Parabadminton</a>
+          <%= link_to 'Parabadminton', home_parabadminton_path, class: "dropdown-item" %>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Links</a>
+          <%= link_to 'Links', home_links_path, class: "dropdown-item" %>
         </div>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+        <a data-target="#navItem2" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
           Competições e Ranking
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Inscrição</a>
-          <a class="dropdown-item" href="#">Certificados</a>
-          <a class="dropdown-item" href="#">Ranking PR</a>
-          <a class="dropdown-item" href="#">Calendário 2022</a>
+        <div id="navItem2" class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to 'Inscrição', home_inscricao_path, class: "dropdown-item" %>
+          <%= link_to 'Certificados', home_certificados_path, class: "dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to 'Ranking PR', home_ranking_path, class: "dropdown-item" %>
+          <%= link_to 'Calendário 2022', home_calendario_path, class: "dropdown-item" %>
         </div>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Onde jogar</a>
+        <%= link_to 'Onde jogar', home_onde_jogar_path, class: "nav-link" %>
       </li>
 
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+        <a data-target="#navItem3" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
           Federação
         </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">História</a>
-          <a class="dropdown-item" href="#">Estrutura</a>
-          <a class="dropdown-item" href="#">Estatuto</a>
-          <a class="dropdown-item" href="#">Regulamento</a>
+        <div id="navItem3" class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to 'História', home_historia_path, class: "dropdown-item" %>
+          <%= link_to 'Estrutura', home_estrutura_path, class: "dropdown-item" %>
+          <div class="dropdown-divider"></div>
+          <%= link_to 'Estatuto', home_estatuto_path, class: "dropdown-item" %>
+          <%= link_to 'Regulamento', home_regulamento_path, class: "dropdown-item" %>
         </div>
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Contato</a>
+        <%= link_to 'Contato', home_contato_path, class: "nav-link" %>
       </li>
 
       <!-- </li>
