@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Making a website for an extension project from my University. 
 
-Things you may want to cover:
+* Rails version: 7.0.3
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Puma version: 5.6.4 (ruby 3.1.2-p20) ("Birdie's Version")
