@@ -11,51 +11,43 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :nome, style: "display: block" %>
-    <%= form.text_field :nome %>
+  <div class = "field form-group">
+    <%= form.text_field :nome, class: "form-control", placeholder: "Nome" %>
   </div>
 
-  <div>
-    <%= form.label :cpf, style: "display: block" %>
-    <%= form.text_field :cpf %>
+  <div class = "field form-group">
+    <%= form.text_field :cpf, class: "form-control", placeholder: "CPF"   %>
   </div>
 
-  <div>
-    <%= form.label :nascimento, style: "display: block" %>
-    <%= form.text_field :nascimento %>
+  <div class = "field form-group">
+    <%= form.text_field :nascimento, class: "form-control", placeholder: "Nascimento"   %>
   </div>
 
-  <div>
-    <%= form.label :idade, style: "display: block" %>
-    <%= form.text_field :idade %>
+  <div class = "field form-group">
+    <%= form.text_field :idade, class: "form-control", placeholder: "Idade"   %>
   </div>
 
-  <div>
-    <%= form.label :genero, style: "display: block" %>
-    <%= form.text_field :genero %>
+  <div class = "field form-group">
+    <%= form.text_field :genero, class: "form-control", placeholder: "Gênero"   %>
   </div>
 
-  <div>
-    <%= form.label :rg, style: "display: block" %>
-    <%= form.text_field :rg %>
+  <div class = "field form-group">
+    <%= form.text_field :rg, class: "form-control", placeholder: "RG"   %>
   </div>
 
-  <div>
-    <%= form.label :entidade, style: "display: block" %>
-    <%= form.text_field :entidade %>
+  <div class = "field form-group">
+    <%= form.text_field :entidade, class: "form-control", placeholder: "Entidade"   %>
   </div>
 
-  <div>
-    <%= form.label :telefone, style: "display: block" %>
-    <%= form.text_field :telefone %>
+  <div class = "field form-group">
+    <%= form.text_field :telefone, class: "form-control", placeholder: "Telefone"  %>
   </div>
 
   <div>
     <%= form.text_field :user_id, value: current_user.id, type: :hidden %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class = "actions" >
+    <%= form.submit class: "btn btn-info" %>
   </div>
 <% end %>

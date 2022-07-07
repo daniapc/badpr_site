@@ -1,8 +1,21 @@
-<%= render @player %>
+<div class="card">
+  <div class="card-header">
+    <h1> <%= @player.nome %> </h1>
+  </div>
+  <div class="card-body">
+    <%= render @player %>
 
-<div>
-  <%= link_to "Edit this player", edit_player_path(@player) %> |
-  <%= link_to "Back to players", players_path %>
+    <br/>
 
-  <%= button_to "Destroy this player", @player, method: :delete %>
+    <%= link_to "Edit this player", edit_player_path(@player), class: "btn btn-secondary" %> &emsp;
+    <%= link_to "Back to players", players_path, class: "btn btn-secondary" %>
+
+    <br/><br/>
+
+    <%= button_to "Destroy this player", @player, method: :delete, class: "btn btn-outline-danger" %>
+
+    <br/>
+  </div>
 </div>
+
+<br/><br/>
