@@ -1,8 +1,22 @@
-<h1>Olá Mundo!</h1>
+<% if current_user %>
+    <h1>Olá <%= current_user.nome %>!</h1>
+
+    <p> Seu cargo é: <strong><%= current_user.role %></strong>! </p>
+    
+    <% if current_user.administrador? %>
+
+        <p> Há <%= User.count %> conta(s) no sistema. </p>
+
+        <p> <%= link_to 'Acesso ao banco de Dados', players_path, class: "nav-link btn btn-info" %> </p>
+
+    <% end %>
+
+<% else %>
+    <h1>Olá Mundo!</h1>
+    
+    <p> Vocẽ não entrou na sua conta. </p>
+<% end %>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 Página inicial BFP
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
-aaaaaaaaaaa
