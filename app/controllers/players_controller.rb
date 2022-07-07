@@ -1,5 +1,7 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
+  before_action :correct_user, only: [ :edit, :update, :destroy ]
 
   # GET /players or /players.json
   def index
@@ -12,7 +14,7 @@ class PlayersController < ApplicationController
 
   # GET /players/new
   def new
-    @player = Player.new
+    @player = current_user.players.build
   end
 
   # GET /players/1/edit
@@ -21,11 +23,11 @@ class PlayersController < ApplicationController
 
   # POST /players or /players.json
   def create
-    @player = Player.new(player_params)
+    @player = current_user.players.build(player_params)
 
     respond_to do |format|
       if @player.save
-        format.html { redirect_to player_url(@player), notice: "Player was successfully created." }
+        format.html { redirect_to player_url(@player), notice: "Atleta inscrito com sucesso." }
         format.json { render :show, status: :created, location: @player }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -57,6 +59,13 @@ class PlayersController < ApplicationController
     end
   end
 
+  def correct_user
+    @aux = @player
+    @player = current_user.players.find_by(id: params[:id])
+    redirect_to players_path, notice: "Ação não autorizada" if @player.nil? && !(current_user.administrador?)
+    @player = @aux
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_player
@@ -65,6 +74,6 @@ class PlayersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def player_params
-      params.require(:player).permit(:nome, :cpf, :nascimento, :idade, :genero, :rg, :entidade, :telefone)
+      params.require(:player).permit(:nome, :cpf, :nascimento, :idade, :genero, :rg, :entidade, :telefone, :user_id)
     end
 end

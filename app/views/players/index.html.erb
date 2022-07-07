@@ -17,18 +17,21 @@
 
   <tbody>
       <% @players.each do |player| %>
-        <tr>
-          <td> <%= link_to player.nome, player %> </td>
-          <td> <%= player.cpf %>  </td>
-          <td> <%= player.nascimento %>  </td>
-          <td> <%= player.idade %>  </td>
-          <td> <%= player.genero %>  </td>
-          <td> <%= player.rg %>  </td>
-          <td> <%= player.entidade %>  </td>
-          <td> <%= player.telefone %>  </td>
-        </tr>
+        <% if player.user == current_user || current_user.administrador? %>
+          <tr>
+            <td> <%= link_to player.nome, player %> </td>
+            <td> <%= player.cpf %>  </td>
+            <td> <%= player.nascimento %>  </td>
+            <td> <%= player.idade %>  </td>
+            <td> <%= player.genero %>  </td>
+            <td> <%= player.rg %>  </td>
+            <td> <%= player.entidade %>  </td>
+            <td> <%= player.telefone %>  </td>
+          </tr>
+        <% end %>
     <% end %>
   </tbody>
 </table>
 
 <%= link_to "New player", new_player_path %>
+

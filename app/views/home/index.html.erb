@@ -13,6 +13,13 @@
 
     <% end %>
 
+    <% if current_user.entidade? %>
+
+        <p> <%= link_to 'Banco de Dados', players_path , class: "nav-link btn btn-info" %> </p>
+
+    <% end %>
+
+
 <% else %>
     <h1>Olá Mundo!</h1>
     
